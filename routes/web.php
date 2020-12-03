@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group([
+    'prefix' => 'api/repository',
+], function () use ($router) {
+    $router->get('/items',  ['as' => 'items', 'uses' => 'Controller@items']);
+});

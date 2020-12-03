@@ -91,6 +91,18 @@ $app->configure('app');
 |
 */
 
+//binding repositories
+$app->bind(\App\Devyan\Interfaces\Classes\ParseInterface::class,
+    \App\Devyan\Classes\RequestParse::class);
+
+//binding validator
+$app->bind(\App\Devyan\Interfaces\Validators\ValidatorInterface::class,
+    \App\Devyan\Validators\Validator::class);
+
+//binding resources
+$app->bind(\App\Devyan\Interfaces\Resources\ResourceInterface::class,
+    \App\Devyan\Resources\RequestResource::class);
+
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
